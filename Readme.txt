@@ -7,3 +7,16 @@ servidor SAMBA,  cliente  para ip dinámica (no-ip). Deberá de rellenar un ficher
 Debe de dar la posibilidad de seleccionar que servicios quiere habilitar o deshabilitar. Aviso de descargar a través de “Telegram” y/o mensajes “Push”.
 
 Material necesario:  Rapsberry Pi
+
+---------------------------------------------------------------
+
+Enlaces:
+
+Creación de Menús:
+
+- http://todoaestribor.site88.net/vertutorial.php?id=10
+
+
+Script de configuración de red:
+
+- http://profesorjlgarcia.blogspot.com.es/2014/01/script-para-configuracion-de-ip-estatica.html
