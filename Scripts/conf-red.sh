@@ -1,34 +1,55 @@
 #!/bin/bash
 
-if [ $LOGNAME != "root" ]
-then
-    read -p "Lo siento, este script debe ser ejecutado con privilegios de root."
-    exit 1
-fi
+_MENU()
+{
+        echo "Configuración de red: "
+        echo
+        echo "1) Configurar la red se su PI"
+        echo "2) Salir."
+        echo
+        echo -n "Indique una opcion: "
+}
+until [ "$opc" = "2" ];
+do
 
-echo "Realizando copias de seguridad..."
-echo    
-    if [ -f /etc/network/interfaces ]
-    then
-        cp /etc/network/interfaces /etc/network/interfaces.original
-        if [ $? -eq 0 ]
-        then
-            echo "El archivo interfaces ha sido salvaguardado con éxito."
-        else
-            echo "Error al salvaguardar el archivo interfaces."
-        fi
-    fi
+case $opc in
+
+        1)
+
+echo "--------------------------------------------"
+echo "-          Configuración de red            -"
+echo "--------------------------------------------"
 echo
-    if [ -f /etc/resolv.conf ]
+
+if [ $LOGNAME != "root" ]
     then
-        cp /etc/resolv.conf /etc/resolv_original.conf
-        if [ $? -eq 0 ]
-        then
-            echo "El archivo resolv.conf ha sido salvaguardado con éxito."
-        else
-            echo "Error al salvaguardar el archivo resolv.conf."
-        fi
+        read -p "Lo siento, este script debe ser ejecutado con privilegios de root."
+        exit 1
     fi
+
+    echo "Realizando copias de seguridad..."
+    echo
+        if [ -f /etc/network/interfaces ]
+            then
+                cp /etc/network/interfaces /etc/network/interfaces.original
+        if [ $? -eq 0 ]
+            then
+              echo "El archivo interfaces ha sido salvaguardado con éxito."
+            else
+                echo "Error al salvaguardar el archivo interfaces."
+            fi
+ fi
+echo
+         if [ -f /etc/resolv.conf ]
+         then
+          cp /etc/resolv.conf /etc/resolv_original.conf
+        if [ $? -eq 0 ]
+            then
+              echo "El archivo resolv.conf ha sido salvaguardado con éxito."
+         else
+                 echo "Error al salvaguardar el archivo resolv.conf."
+             fi
+         fi
 echo
 echo "Mostrando interfaces de red actuales..."
 for nic in `lshw -short -class network | grep eth | tr -s " " | cut -f2 -d" " `
@@ -52,13 +73,6 @@ do
         interfaz=0
     fi
 done
-
-#if [ $interfaz -ne 0 ]
-#then
- #   echo "Error, la interfaz $interfaz no es válida."
- #   read -p "Pulsa una tecla para cerrar el script..."
- #   exit 1
-#fi
 
 echo "La interfaz elegida es: $nic"
 read -p "Introduce la nueva dirección ip estática: " ip
@@ -94,12 +108,23 @@ do
         echo "nameserver $dns2" >> $resolv
 
 #Reinicio de la red
-#/etc/init.d/networking restart
+/etc/init.d/networking restart
 
 break;;
         n|N)echo "Ok, no se modificarán los archivos de configuración"; read; break;;
         *) echo "No ha introducido una respuesta válida, vuelva a intentarlo.";;
     esac
 done
+_MENU
+;;
 
-exit 0
+        2) sudo ./install.sh ;;
+
+        *)
+        clear
+        _MENU
+        ;;
+    esac
+read opc
+done
+                                                                          
