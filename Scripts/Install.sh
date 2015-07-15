@@ -24,15 +24,15 @@ do
                     clear
                         _MENU ;;
 
-                3)      sudo ./pydio.sh
+                3)      sudo ./opc-conf-servicios.sh
                     clear
                         _MENU ;;
 
-                4)      sudo ./samba.sh
+                4)      sudo ./status.sh
                     clear
                         _MENU ;;
 
-                8) exit ;;
+                5) exit ;;
 
                 *)
                 clear

@@ -1,4 +1,5 @@
 #! /bin/bash
+
 _MENU()
 {
 
@@ -46,6 +47,7 @@ do
             clear
             _MENU
             ;;
+
                 4) sudo apt-get -y install samba samba-common samba-common-bin samba-doc
             sudo sed -i "s/$(head -n 102 /etc/samba/smb.conf | tail -1)/    \security\ = user\ /g" /etc/samba/smb.conf
             echo
