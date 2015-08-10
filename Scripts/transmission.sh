@@ -10,7 +10,7 @@ _MENU()
     echo "4) Parar Servicio Transmission."
     echo "5) Reiniciar Servicio Transmission."
     echo "6) Desinstalar Servicio Transmission."
-    echo "7) Salir."    
+    echo "7) Volver atras."    
     echo -n "Indique una opcion: "
 }
 until [ "$opc" = "7" ];

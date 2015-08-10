@@ -5,7 +5,7 @@ _MENU()
         echo "Opciones del servicio NO-IP: "
         echo
         echo "1) Crear el script para iniciar automaticamente."
-        echo "2) Salir."
+        echo "2) Volver atras."
         echo -n "Indique una opcion: "
 }
 until [ "$opc" = "2" ];

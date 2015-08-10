@@ -12,7 +12,7 @@ _MENU()
     echo "5) Parar Servicio Samba."
     echo "6) Reiniciar Servicio Samba."
     echo "7) Desinstalar Servidor SAMBA."
-    echo "8) Salir."    
+    echo "8) Volver atras."    
     echo -n "Indica una opcion: "
 }
 

@@ -5,14 +5,14 @@ _MENU()
 
         echo "Paquetes a instalar: "
         echo
-        echo "1) Instalar Servidor Apache (LAMP)."
+        echo "1) Instalar Servidor LAMP."
         echo "2) Instalar Servidor OpenSSH."
         echo "3) Instalar Servicio Pydio."
         echo "4) Instalar Servidor SAMBA"
         echo "5) Instalar Servicio NO-IP."
         echo "6) Instalar Servicio Telegram."
         echo "7) Instalar Servidor Transmission."
-        echo "8) Salir."
+        echo "8) Volver atras."
         echo
         echo -n "Indique una opcion: "
 }

@@ -7,8 +7,11 @@ _MENU()
     echo "1) Iniciar Servicio Apache."  
     echo "2) Parar Servicio Apache."
     echo "3) Reiniciar Servicio Apache."
-    echo "4) Desinstalar Servicio Apache."
-    echo "5) Salir." 
+    echo "4) Iniciar Servicio Mysql." 
+    echo "5) Parar Servicio Mysql."
+    echo "6) Reiniciar Servicio Mysql."
+    echo "7) Desinstalar Servicio LAMP."
+    echo "8) Volver atras." 
     echo   
     echo -n "Indique una opcion: "
 }
@@ -43,7 +46,36 @@ do
             _MENU
             ;;
 
-        4)  sudo apt-get -y purge apache2 mysql-server libapache2-mod-php5 php5 php5-mcrypt
+
+        4)  sudo /etc/init.d/mysql start
+            echo
+            echo
+            echo "Servicio iniciado correctamente"
+            sleep 2
+            clear
+            _MENU 
+            ;;
+
+         5)  sudo /etc/init.d/mysql stop
+             echo
+             echo
+             echo "Servicio parado correctamente"
+             sleep 2
+             clear
+             _MENU 
+             ;;
+
+         6)  sudo /etc/init.d/mysql restart
+            echo
+            echo
+            echo "Servicio reiniciado correctamente"
+            sleep 2
+            clear
+            _MENU 
+            ;;
+
+
+        7)  sudo apt-get -y purge apache2 mysql-server libapache2-mod-php5 php5 php5-mcrypt
             echo
             echo "Servicio eliminado correctamente"
             sleep 4
@@ -51,7 +83,7 @@ do
             _MENU 
             ;;
 
-        5)  sudo ./opc-conf-servicios.sh ;;
+        8)  sudo ./opc-conf-servicios.sh ;;
 
         *)
         clear

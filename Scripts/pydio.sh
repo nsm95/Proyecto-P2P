@@ -6,7 +6,7 @@ _MENU()
         echo
         echo "1) Crear base de datos para Pydio."
         echo "2) Solucionar error de instalacion Pydio."
-        echo "3) Salir."
+        echo "3) Volver atras."
         echo -n "Indica una opcion: "
 }
 until [ "$opc" = "3" ];

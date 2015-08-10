@@ -5,7 +5,7 @@ _MENU()
         echo "Opciones del servicio Telegram: "
         echo
         echo "1) Cambiar número de teléfono de Telegram."
-        echo "2) Salir."
+        echo "2) Volver atras."
         echo -n "Indica una opcion: "
 }
 until [ "$opc" = "2" ];

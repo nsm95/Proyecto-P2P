@@ -4,14 +4,14 @@ _MENU()
 {
         echo "Opciones y configuraciones de los servicios instalados: "
         echo
-        echo "1) Servicio Apache."
+        echo "1) Servicio LAMP."
         echo "2) Servicio OpenSSH."
         echo "3) Servicio Pydio."
         echo "4) Servicio Samba."
         echo "5) Servicio NO-IP."
         echo "6) Servicio Telegram."
         echo "7) Servicio Transmission."
-        echo "8) Salir."
+        echo "8) Volver atras."
         echo
         echo -n "Indique una opcion: "
 }

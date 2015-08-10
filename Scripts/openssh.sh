@@ -8,7 +8,7 @@ _MENU()
     echo "2) Parar Servicio OpenSSH."
     echo "3) Reiniciar Servicio OpenSSH."
     echo "4) Desinstalar Servidor OpenSSH."
-    echo "5) Salir."    
+    echo "5) Volver atras."    
     echo -n "Indica una opcion: "
 }
 until [ "$opc" = "5" ];

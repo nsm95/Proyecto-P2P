@@ -4,8 +4,9 @@ _MENU()
 {
         echo "Configuración de red: "
         echo
-        echo "1) Configurar la red se su PI"
-        echo "2) Salir."
+        echo "1) Configurar la red de su PI"
+        echo "2) Restaurar fichero Interfaces"
+        echo "3) Volver atras."
         echo
         echo -n "Indique una opcion: "
 }
@@ -118,7 +119,12 @@ done
 _MENU
 ;;
 
-        2) sudo ./install.sh ;;
+
+        2)  echo "Restaurando copias de seguridad del fichero Interfaces..."
+            echo
+            cp /etc/network/interfaces.original /etc/network/interfaces
+
+        3) sudo ./install.sh ;;
 
         *)
         clear
