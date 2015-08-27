@@ -6,10 +6,12 @@ _MENU()
         echo
         echo "1) Crear base de datos para Pydio."
         echo "2) Solucionar error de instalacion Pydio."
-        echo "3) Volver atras."
+        echo "3) Información. "
+        echo "4) Volver atras."
+        echo
         echo -n "Indica una opcion: "
 }
-until [ "$opc" = "3" ];
+until [ "$opc" = "4" ];
 do
         case $opc in
 
@@ -25,11 +27,10 @@ do
                     echo
                     echo "Base de datos creada correctamente"
                     sleep 4
-                    clear
                     _MENU
                     ;;
 
-                3) sudo echo "<IfModule mod_rewrite.c>
+                2) sudo echo "<IfModule mod_rewrite.c>
 # You must set the correct values here if you want
 # to enable webDAV sharing. The values assume that your 
 # Pydio installation is at http://yourdomain/
@@ -121,6 +122,13 @@ $AJXP_INISET = array();
  */
 define("AJXP_FORCE_SSL_REDIRECT", true);" > /etc/pydio/bootstrap_conf.php 
 		;;
+
+                3) 
+                echo
+                echo "PARA PODER ACCEDER A PYDIO, TENDRÁ QUE DIRIGIRSE A UN NAVEGADOR Y ESCRIBIR LA DIRECCIÓN IP DE SU RASPBERRY MÁS PYDIO, ejemplo "192.168.1.x/pydio""
+                echo
+                 _MENU
+                    ;;
 
                 4)  sudo ./opc-conf-servicios.sh ;;
 

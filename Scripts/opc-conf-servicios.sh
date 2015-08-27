@@ -9,13 +9,12 @@ _MENU()
         echo "3) Servicio Pydio."
         echo "4) Servicio Samba."
         echo "5) Servicio NO-IP."
-        echo "6) Servicio Telegram."
-        echo "7) Servicio Transmission."
-        echo "8) Volver atras."
+        echo "6) Servicio Transmission."
+        echo "7) Volver atras."
         echo
         echo -n "Indique una opcion: "
 }
-until [ "$opc" = "8" ];
+until [ "$opc" = "7" ];
 do
         case $opc in
                 1)  sudo ./apache.sh
@@ -38,15 +37,11 @@ do
                     clear
             		_MENU ;;
 
-                6)	sudo ./telegram.sh
+                6)	sudo ./transmission.sh
                     clear
             		_MENU ;;
 
-                7)	sudo ./transmission.sh
-                    clear
-            		_MENU ;;
-
-                8) sudo ./install.sh ;;
+                7) sudo ./install.sh ;;
 
                 *)
                 clear

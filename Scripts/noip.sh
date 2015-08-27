@@ -5,10 +5,12 @@ _MENU()
         echo "Opciones del servicio NO-IP: "
         echo
         echo "1) Crear el script para iniciar automaticamente."
-        echo "2) Volver atras."
+        echo "2) Información. "
+        echo "3) Volver atras."
+        echo
         echo -n "Indique una opcion: "
 }
-until [ "$opc" = "2" ];
+until [ "$opc" = "3" ];
 do
         case $opc in
 
@@ -29,9 +31,15 @@ do
                         echo
                         echo "Script creado correctamente"
                         sleep 4
-                        clear
                         _MENU
                         ;;
+
+                2)  
+                echo
+                echo "PARA PODER ACCEDER A NUESTRA PI DESDE LA CALLE, TENDRÁ QUE CONECTARSE A TRAVES DE PUTTY Y PONER SU HOST. "
+                echo
+                 _MENU
+                    ;;
 
                 3) sudo ./opc-conf-servicios.sh ;;
 

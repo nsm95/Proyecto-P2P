@@ -20,3 +20,15 @@ Creación de Menús:
 Script de configuración de red:
 
 - http://profesorjlgarcia.blogspot.com.es/2014/01/script-para-configuracion-de-ip-estatica.html
+
+
+Configuración de no-ip:
+
+- http://www.electroensaimada.com/no-ip.html
+
+
+Configuración de Pydio:
+
+- https://geekytheory.com/tutorial-raspberry-pi-crea-una-nube-privada-con-pydio/
+
+

@@ -9,6 +9,7 @@ _MENU()
         echo "3) Estatus del Servicio NO-IP."
         echo "4) Estatus del Servicio Transmission."
         echo "5) Volver atras."
+        echo
         echo -n "Indique una opcion: "
 }
 until [ "$opc" = "8" ];
@@ -21,11 +22,15 @@ do
         echo "-          Estatus Servicio LAMP           -"
         echo "--------------------------------------------"
         echo
-                /etc/init.d/apache2 status
+                sudo /etc/init.d/apache2 status
         echo
         echo ----------------------------------------------
         echo
-                /etc/init.d/mysql status
+                sudo /etc/init.d/mysql status
+
+        echo
+        _MENU
+        ;;
 
 
         2) 
@@ -34,8 +39,11 @@ do
         echo "-          Estatus Servicio SAMBA          -"
         echo "--------------------------------------------"
         echo
-                 /etc/init.d/samba status
+                sudo /etc/init.d/samba status
 
+         echo
+        _MENU
+        ;;
 
         3) 
     
@@ -44,16 +52,26 @@ do
         echo "--------------------------------------------"
         echo
 
-                /etc/init.d/noip2 status
+            sudo /usr/local/bin/noip2 -S
+
+
+        echo
+        _MENU
+        ;;
 
         4) 
 
         echo "--------------------------------------------"
-        echo "-          Estatus Servicio Transmission   -"
+        echo "-      Estatus Servicio Transmission       -"
         echo "--------------------------------------------"
         echo
 
-                /etc/init.d/transmission-daemon status
+               sudo /etc/init.d/transmission-daemon status
+        
+        echo
+        _MENU
+        ;;
+
 
         5) sudo ./install.sh ;;
 

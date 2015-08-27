@@ -24,7 +24,6 @@ do
             echo
             echo "Servicio iniciado correctamente"
             sleep 2
-            clear
             _MENU 
             ;;
 
@@ -33,7 +32,6 @@ do
             echo
             echo "Servicio parado correctamente"
             sleep 2
-            clear
             _MENU
             ;;
         
@@ -42,7 +40,6 @@ do
             echo
             echo "Servicio reiniciado correctamente"
             sleep 2
-            clear
             _MENU
             ;;
 
@@ -52,7 +49,6 @@ do
             echo
             echo "Servicio iniciado correctamente"
             sleep 2
-            clear
             _MENU 
             ;;
 
@@ -61,7 +57,6 @@ do
              echo
              echo "Servicio parado correctamente"
              sleep 2
-             clear
              _MENU 
              ;;
 
@@ -70,7 +65,6 @@ do
             echo
             echo "Servicio reiniciado correctamente"
             sleep 2
-            clear
             _MENU 
             ;;
 
@@ -79,7 +73,6 @@ do
             echo
             echo "Servicio eliminado correctamente"
             sleep 4
-            clear
             _MENU 
             ;;
 

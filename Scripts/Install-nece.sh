@@ -10,7 +10,7 @@ _MENU()
         echo "3) Instalar Servicio Pydio."
         echo "4) Instalar Servidor SAMBA"
         echo "5) Instalar Servicio NO-IP."
-        echo "6) Instalar Servicio Telegram."
+        echo "6) Instalar Servicio de Mensajeria."
         echo "7) Instalar Servidor Transmission."
         echo "8) Volver atras."
         echo
@@ -23,7 +23,7 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 4
-            clear
+     
             _MENU
             ;;
 
@@ -31,7 +31,7 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 4
-            clear
+
             _MENU
             ;;
 
@@ -44,7 +44,7 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 4
-            clear
+     
             _MENU
             ;;
 
@@ -53,7 +53,7 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 4
-            clear
+      
             _MENU
             ;;
 
@@ -67,14 +67,13 @@ do
             rm -r noip-duc-linux.tar.gz
             echo
             echo
+            sleep 4
             _MENU
             ;;
 
                 6) cd /home/pi
-            sudo apt-get install -y libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make git python python-sip python-mysqldb
-            sudo git clone --recursive https://github.com/vysheng/tg.git && cd tg
-            sudo ./configure --disable-json
-            make
+            import urllib2
+            import json
             echo
             echo "Servicio Instalado correctamente"
             sleep 4
@@ -86,7 +85,6 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 4
-            clear
             _MENU
             ;;
 

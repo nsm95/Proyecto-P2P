@@ -20,7 +20,7 @@ do
                     clear
                         _MENU ;;
 
-                2)  sudo ./install-nece.sh
+                2)  sudo ./Install-nece.sh
                     clear
                         _MENU ;;
 

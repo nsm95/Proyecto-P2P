@@ -12,7 +12,8 @@ _MENU()
     echo "5) Parar Servicio Samba."
     echo "6) Reiniciar Servicio Samba."
     echo "7) Desinstalar Servidor SAMBA."
-    echo "8) Volver atras."    
+    echo "8) Volver atras." 
+    echo   
     echo -n "Indica una opcion: "
 }
 
@@ -27,7 +28,6 @@ do
             echo
             echo "Usuario añadido correctamente a Samba"
             sleep 4
-            clear
             _MENU
             ;;
 
@@ -37,7 +37,6 @@ do
             echo
             echo "Usuario Eliminado"
             sleep 4
-            clear
             _MENU
             ;;
 
@@ -61,28 +60,24 @@ do
             echo
             echo "Carpeta Compartida añadida al fichero smb.conf. Reinicie el servicio para hacer efectivo el cambio"
             sleep 4
-            clear
             _MENU
             ;;
 
         4)  sudo service samba start
             echo "Servicio iniciado correctamente"
             sleep 4
-            clear
             _MENU
             ;;
 
         5)  sudo service samba stop
             echo "Servicio parado correctamente"
             sleep 4
-            clear
             _MENU
             ;;
 
         6)   sudo service samba restart
             echo "Servicio reiniciado correctamente"
             sleep 4
-            clear
             _MENU
             ;;
             
@@ -92,7 +87,6 @@ do
             echo
             echo "Servicio eliminado correctamente"
             sleep 4
-            clear
             _MENU
             ;; 
 

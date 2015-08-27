@@ -7,8 +7,9 @@ _MENU()
     echo "1) Iniciar Servicio OpenSSH."  
     echo "2) Parar Servicio OpenSSH."
     echo "3) Reiniciar Servicio OpenSSH."
-    echo "4) Desinstalar Servidor OpenSSH."
-    echo "5) Volver atras."    
+    echo "4) Desinstalar Servicio OpenSSH."
+    echo "5) Volver atras."
+    echo    
     echo -n "Indica una opcion: "
 }
 until [ "$opc" = "5" ];
@@ -19,7 +20,6 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 2
-            clear
             _MENU
             ;;
 
@@ -27,7 +27,6 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 2
-            clear
             _MENU
             ;;
         
@@ -35,7 +34,6 @@ do
             echo
             echo "Servicio instalado correctamente"
             sleep 2
-            clear
             _MENU
             ;;
 
@@ -43,7 +41,6 @@ do
             echo
             echo "Servicio eliminado correctamente"
             sleep 4
-            clear
             _MENU
             ;;	
 
