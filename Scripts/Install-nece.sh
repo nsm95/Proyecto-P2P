@@ -72,8 +72,7 @@ do
             ;;
 
                 6) cd /home/pi
-            import urllib2
-            import json
+            sudo apt-get install python-dev
             echo
             echo "Servicio Instalado correctamente"
             sleep 4
@@ -88,7 +87,7 @@ do
             _MENU
             ;;
 
-                8) sudo ./install.sh ;;
+                8) sudo ./Install.sh ;;
 
                 *)
                 clear

@@ -1,3 +1,5 @@
+  import urllib2
+  import json
 #Esta es la funcion que usara el script para enviar las notificaciones
 def sendNotification(token, channel, message):
         data = {

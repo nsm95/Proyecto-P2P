@@ -41,7 +41,7 @@ do
                     clear
             		_MENU ;;
 
-                7) sudo ./install.sh ;;
+                7) sudo ./Install.sh ;;
 
                 *)
                 clear

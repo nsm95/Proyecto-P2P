@@ -20,7 +20,6 @@ _MENU()
 until [ "$opc" = "10" ];
 do
     case $opc in
- 
 
 
         1)
@@ -36,7 +35,7 @@ do
             _MENU
             ;;
 
-        4) ls /root/Downloads 
+        4) sudo ls /root/Downloads 
         echo
             _MENU
             ;; 

@@ -15,7 +15,7 @@ _MENU()
     echo   
     echo -n "Indique una opcion: "
 }
-until [ "$opc" = "5" ];
+until [ "$opc" = "8" ];
 do
     case $opc in
 

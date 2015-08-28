@@ -12,7 +12,7 @@ _MENU()
         echo
         echo -n "Indique una opcion: "
 }
-until [ "$opc" = "8" ];
+until [ "$opc" = "5" ];
 do
     case $opc in
 
@@ -73,7 +73,7 @@ do
         ;;
 
 
-        5) sudo ./install.sh ;;
+        5) sudo ./Install.sh ;;
 
                 *)
                 clear

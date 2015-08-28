@@ -10,7 +10,7 @@ _MENU()
         echo
         echo -n "Indique una opcion: "
 }
-until [ "$opc" = "2" ];
+until [ "$opc" = "3" ];
 do
 
 case $opc in
@@ -124,7 +124,7 @@ _MENU
             echo
             cp /etc/network/interfaces.original /etc/network/interfaces
 
-        3) sudo ./install.sh ;;
+        3) sudo ./Install.sh ;;
 
         *)
         clear
