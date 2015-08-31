@@ -73,7 +73,7 @@ do
         ;;
 
 
-        5) sudo ./Install.sh ;;
+        5) sudo ./install.sh ;;
 
                 *)
                 clear

@@ -10,25 +10,10 @@ Material necesario:  Rapsberry Pi
 
 ---------------------------------------------------------------
 
-Enlaces:
+1.- Ejecutar el script permisos de esta menera:
 
-Creación de Menús:
+	- sh permisos.sh
 
-- http://todoaestribor.site88.net/vertutorial.php?id=10
+2.- Ejecutar el script Install.sh para poder comenzar a instalar la apliación.
 
-
-Script de configuración de red:
-
-- http://profesorjlgarcia.blogspot.com.es/2014/01/script-para-configuracion-de-ip-estatica.html
-
-
-Configuración de no-ip:
-
-- http://www.electroensaimada.com/no-ip.html
-
-
-Configuración de Pydio:
-
-- https://geekytheory.com/tutorial-raspberry-pi-crea-una-nube-privada-con-pydio/
-
-
+3.- En caso de dudas ver manual en www.github.com/nsm

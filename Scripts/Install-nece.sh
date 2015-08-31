@@ -10,13 +10,12 @@ _MENU()
         echo "3) Instalar Servicio Pydio."
         echo "4) Instalar Servidor SAMBA"
         echo "5) Instalar Servicio NO-IP."
-        echo "6) Instalar Servicio de Mensajeria."
-        echo "7) Instalar Servidor Transmission."
-        echo "8) Volver atras."
+        echo "6) Instalar Servidor Transmission + Notificaciones PUSH."
+        echo "7) Volver atras."
         echo
         echo -n "Indique una opcion: "
 }
-until [ "$opc" = "8" ];
+until [ "$opc" = "7" ];
 do
         case $opc in
                 1) sudo apt-get -y install  apache2 mysql-server libapache2-mod-php5 php5 php5-mcrypt
@@ -71,23 +70,35 @@ do
             _MENU
             ;;
 
-                6) cd /home/pi
-            sudo apt-get install python-dev
-            echo
-            echo "Servicio Instalado correctamente"
+                6) sudo apt-get -y install transmission transmission-daemon
+                    cd /home/pi
+                    sudo apt-get install python-dev
+                    echo
+
+                    sudo chmod -R 777 /etc/transmission-daemon
+                    sudo /etc/init.d/transmission-daemon stop
+
+                    read -p "Introduzca nombre de usuario: " var1
+
+                    sudo sed -i "s%$(head -n 51 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-username\": \"$var1\", %g" /var/lib/transmission-daemon/info/settings.json
+                    echo
+                    read -p "Intruzca la contraseña: " var2
+
+                    sudo sed -i "s%$(head -n 48 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-password\": \"$var2\", %g" /var/lib/transmission-daemon/info/settings.json
+                    echo
+
+                    sudo sed -i "s%$(head -n 53 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-whitelist-enabled\": "\false"\, %g" /var/lib/transmission-daemon/info/settings.json 
+          
+                    crontab tarea.txt
+
+                    sudo /etc/init.d/transmission-daemon start
+
+                      echo "Servicio instalado correctamente"
             sleep 4
             _MENU
             ;;
 
-                7) sudo apt-get -y install transmission transmission-daemon
-            echo
-            echo
-            echo "Servicio instalado correctamente"
-            sleep 4
-            _MENU
-            ;;
-
-                8) sudo ./Install.sh ;;
+                7) sudo ./Install.sh ;;
 
                 *)
                 clear
