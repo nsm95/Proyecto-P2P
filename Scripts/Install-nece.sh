@@ -88,7 +88,13 @@ do
                     echo
 
                     sudo sed -i "s%$(head -n 53 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-whitelist-enabled\": "\false"\, %g" /var/lib/transmission-daemon/info/settings.json 
-          
+			
+			read -p "Introduzca su API-Key: " men1
+			read -p "Introduzca el nombre de su canal: " men2
+			men3="$men1\", \"$men2\", \"La descarga fa finalizado con exito."
+
+			sudo sed -i "s%$(head -n 18 /home/pi/AplicacionP2P/mensaje.py | tail -1)%\sendNotification\(\"$men3\") %g" /home/pi/AplicacionP2P/mensaje.py
+
                     crontab tarea.txt
 
                     sudo /etc/init.d/transmission-daemon start

@@ -15,7 +15,7 @@ def sendNotification(token, channel, message):
         response = urllib2.urlopen(req, json.dumps(data))
 
 #Enviamos la notificacion en formato '<strong>Apikey+Canal+Mensaje</strong>'
-sendNotification("fb232cf502fda3c39c9107cb32f0b6573877798a", "mensajes", "La descarga ha finalizado con exito!")
+sendNotification("fb232cf502fda3c39c9107cb32f0b6573877798a", "mensajes", "La descarga fa finalizado con exito.") 
 
 #Avisamos al usuario de que ya se ha enviado el mensaje
 print "Mensaje enviado!"
