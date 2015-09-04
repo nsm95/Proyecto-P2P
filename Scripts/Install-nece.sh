@@ -35,11 +35,25 @@ do
             ;;
 
                 3) cd /home/pi
-            wget http://kent.dl.sourceforge.net/project/ajaxplorer/pydio/stable-channel/6.0.7/pydio_6.0.7_all.deb
-            sudo dpkg -i pydio_6.0.7_all.deb
-            sudo apt-get -f -y install
-            sudo cp /usr/share/doc/pydio/apache2.sample.conf /etc/apache2/sites-enabled/pydio.conf
-            sudo service apache2 restart
+            sudo apt-get install mysql-server mysql-common mysql-client php5-mysql mcrypt
+
+            sudo apt-get -y install php-mcrypt
+
+            sudo /etc/init.d/apache2 restart
+
+            cd /var/www
+
+            sudo wget http://sourceforge.net/projects/ajaxplorer/files/pydio/stable-channel/6.0.8/pydio-core-6.0.8.zip
+
+            sudo unzip pydio-core-6.0.8.zip
+
+            sudo mv pydio-core-6.0.8 pydio
+
+            sudo chmod -R 777 pydio
+
+            sudo chmod -R 777 pydio/data
+
+            cat /home/pi/AplicacionP2P/.htaccess /var/www/pydio
             echo
             echo "Servicio instalado correctamente"
             sleep 4
@@ -77,7 +91,8 @@ do
 
                     sudo chmod -R 777 /etc/transmission-daemon
                     sudo /etc/init.d/transmission-daemon stop
-
+                    echo
+                    echo "Configuración transmission: "
                     read -p "Introduzca nombre de usuario: " var1
 
                     sudo sed -i "s%$(head -n 51 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-username\": \"$var1\", %g" /var/lib/transmission-daemon/info/settings.json
@@ -88,7 +103,7 @@ do
                     echo
 
                     sudo sed -i "s%$(head -n 53 /var/lib/transmission-daemon/info/settings.json | tail -1)%    \"rpc-whitelist-enabled\": "\false"\, %g" /var/lib/transmission-daemon/info/settings.json 
-			
+			echo "Configuración Pushetta: "
 			read -p "Introduzca su API-Key: " men1
 			read -p "Introduzca el nombre de su canal: " men2
 			men3="$men1\", \"$men2\", \"La descarga fa finalizado con exito."
